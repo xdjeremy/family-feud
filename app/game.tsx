@@ -1,6 +1,7 @@
 import React from 'react';
 import Answers from '@/components/answers';
 import ScoreBoard from '@/components/score-board';
+import FamilyScore from '@/components/family-score';
 
 const Game = () => {
   return (
@@ -14,6 +15,8 @@ const Game = () => {
           'flex h-full w-full flex-col items-center justify-center rounded-full border-[12px] border-[#fffe53] bg-[#1A36DC]'
         }
       >
+        <FamilyScore side={'left'} />
+        <FamilyScore side={'right'} />
         <div
           className={
             'flex -translate-y-6 flex-col items-center justify-center gap-3'
