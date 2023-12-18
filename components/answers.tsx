@@ -4,19 +4,22 @@ import ReactFlipCard from 'reactjs-flip-card';
 
 const Answers = () => {
   return (
-    <div className={'bg-black'}>
+    <>
       <ReactFlipCard
+        containerStyle={{
+          flex: 1,
+        }}
         direction={'vertical'}
         flipTrigger={'onClick'}
         frontComponent={
           <button
             className={
-              'flex h-16 w-72 flex-col items-center justify-center rounded-xl border-2 border-white bg-opacity-80 bg-gradient-to-r from-light-blue via-blue-500 to-light-blue py-2'
+              'flex h-28 w-96 flex-col items-center justify-center rounded-xl border-2 border-white bg-opacity-80 bg-gradient-to-r from-light-blue via-blue-500 to-light-blue py-2'
             }
           >
             <span
               className={
-                'h-10 w-11 rounded-full border-2 border-white bg-dark-blue text-3xl font-extrabold text-white shadow-2xl'
+                'flex h-20 w-24 flex-col items-center justify-center rounded-full border-2 border-white bg-dark-blue text-6xl font-extrabold text-white shadow-2xl'
               }
             >
               1
@@ -26,7 +29,7 @@ const Answers = () => {
         backComponent={
           <button
             className={
-              'flex h-16 w-72 flex-row items-center justify-center divide-x-2 divide-white rounded-xl border-2 border-white bg-opacity-80 bg-gradient-to-r from-light-blue via-blue-500 to-light-blue text-2xl font-semibold text-white'
+              'flex h-28 w-96 flex-row items-center justify-center divide-x-2 divide-white rounded-xl border-2 border-white bg-opacity-80 bg-gradient-to-r from-light-blue via-blue-500 to-light-blue text-3xl font-semibold text-white'
             }
           >
             <span
@@ -46,7 +49,7 @@ const Answers = () => {
           </button>
         }
       />
-    </div>
+    </>
   );
 };
 
