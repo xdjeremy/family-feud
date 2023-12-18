@@ -34,7 +34,7 @@ const Answers = () => {
           >
             <span
               className={
-                'flex h-full w-full flex-col items-center justify-center'
+                'flex h-full w-full flex-col items-center justify-center uppercase'
               }
             >
               BEACH / RESORT
