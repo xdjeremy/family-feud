@@ -5,11 +5,17 @@ import HomeScreen from '@/app/home-screen';
 import GameProvider from '@/components/game-provider';
 
 const Home = () => {
+  const [startGame, setStartGame] = React.useState(false);
+
   return (
     <GameProvider>
       <div className={'h-screen bg-gradient-to-b from-dark-blue to-light-blue'}>
-        <Game />
-        {/*<HomeScreen />*/}
+        {startGame ? (
+          <Game />
+        ) : (
+          <HomeScreen onStartGame={() => setStartGame(true)} />
+        )}
+        {/*<Game />*/}
       </div>
     </GameProvider>
   );
