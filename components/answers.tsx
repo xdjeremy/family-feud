@@ -1,8 +1,19 @@
 'use client';
-import React from 'react';
+import React, { FC } from 'react';
 import ReactFlipCard from 'reactjs-flip-card';
+import { useGame } from '@/components/game-provider';
 
-const Answers = () => {
+interface Props {
+  answer: {
+    text: string;
+    score: number;
+  };
+  number: number;
+}
+
+const Answers: FC<Props> = ({ answer, number }) => {
+  const { openCard } = useGame();
+
   return (
     <>
       <ReactFlipCard
@@ -11,6 +22,7 @@ const Answers = () => {
         }}
         direction={'vertical'}
         flipTrigger={'onClick'}
+        onClick={() => openCard(number)}
         frontComponent={
           <button
             className={
@@ -22,7 +34,7 @@ const Answers = () => {
                 'flex h-20 w-24 flex-col items-center justify-center rounded-full border-2 border-white bg-dark-blue text-6xl font-extrabold text-white shadow-2xl'
               }
             >
-              1
+              {number + 1}
             </span>
           </button>
         }
@@ -37,14 +49,14 @@ const Answers = () => {
                 'flex h-full w-full flex-col items-center justify-center uppercase'
               }
             >
-              BEACH / RESORT
+              {answer.text}
             </span>
             <span
               className={
                 'flex h-full w-fit flex-col items-center justify-center px-3'
               }
             >
-              50
+              {answer.score}
             </span>
           </button>
         }

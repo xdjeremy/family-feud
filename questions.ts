@@ -268,3 +268,5 @@ const questions: Questions[] = [
     ],
   },
 ];
+
+export default questions;
